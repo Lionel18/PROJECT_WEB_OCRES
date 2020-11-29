@@ -37,7 +37,7 @@ const Banque = () => {
 
 		<div>
 			<Jumbotron>
-				<h1 className="display-3">Widget Banque</h1>
+				<h1 className="display-5">Widget Banque</h1>
 				<p className="lead">Bonjour et bienvenue sur votre espace client pour gérer votre solde bancaire.</p>
 
 				<InputGroup>
@@ -48,7 +48,7 @@ const Banque = () => {
 				</InputGroup>
 
 				<InputGroup>
-					<Input type="number" placeholder="retirer €" onChange={e => setRetirer(+e.target.value)} />
+					<Input type="number" placeholder="Retirer €" onChange={e => setRetirer(+e.target.value)} />
 					<InputGroupAddon addonType="append">
 						<Button color="danger" onClick={calculateRetirer}> Retirer </Button>
 					</InputGroupAddon>
@@ -56,7 +56,7 @@ const Banque = () => {
 
 
 				<div className="TotalArgent">
-					<h1>{solde}</h1>
+					<h1>Le solde de votre compte est de : {solde} €</h1>
 				</div>
 
 				<LineChart width={600} height={300} data={historiqueSolde} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
@@ -67,13 +67,10 @@ const Banque = () => {
 				</LineChart>
 			</Jumbotron>
 
-
 		</div>
 
 	);
 
 }
 
-
-
-export default Banque;
+export default Banque

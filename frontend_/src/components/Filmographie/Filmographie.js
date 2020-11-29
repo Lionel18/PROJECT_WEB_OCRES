@@ -6,7 +6,7 @@ import { Jumbotron, Button, Input, InputGroup, InputGroupAddon } from 'reactstra
 const films = [{
 
     nom: "Bad boys",
-    date: "25/11/2017",
+    date: "22/11/2018",
     duree: 120,
     genre: "Action",
     synopsis: "Très bon film",
@@ -15,10 +15,20 @@ const films = [{
 }, {
     nom: "Taxi 5",
     date: "25/11/2017",
-    duree: 120,
+    duree: 110,
     genre: "Action",
-    synopsis: "Très bon film",
+    synopsis: "Très bon film et drôle",
     photo: 'https://fr.web.img3.acsta.net/pictures/18/03/09/12/16/2548759.jpg'
+
+}, {
+
+    nom: "Soorarai Pottru",
+    date: "12/11/2020",
+    duree: 190,
+    genre: "Drame/Action",
+    synopsis: "Magnifique film avec un très bon Surya en forme",
+    photo: 'https://www.pinkvilla.com/files/styles/contentpreview/public/soorarai_pottru_suriyas_fans_request_actor_to_reconsider_the_decision_of_films_direct_release_on_an_ott_platform.jpg?itok=isALj45O'
+
 }]
 
 const Filmographie = (props) => {
@@ -36,11 +46,11 @@ const Filmographie = (props) => {
 
     return <div>
         <Jumbotron>
-            <h1 className="display-3">Widget Filmographie</h1>
+            <h1 className="display-5">Widget Filmographie</h1>
             <p className="lead">Cherchez des films avec ce widget</p>
             <InputGroup>
                 <Input type="text" placeholder="Rechercher un film" onChange={event => setSearchFilm(event.target.value)} />
-                <InputGroupAddon addonType="prepend"><Button onClick={findFilm} >Rechercher</Button></InputGroupAddon>
+                <InputGroupAddon addonType="prepend"><Button onClick={findFilm}> Explorer </Button></InputGroupAddon>
             </InputGroup>
 
             {film &&
@@ -58,8 +68,6 @@ const Filmographie = (props) => {
                 </>
             }
         </Jumbotron>
-
-
     </div>
 }
 
