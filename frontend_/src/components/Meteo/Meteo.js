@@ -68,7 +68,7 @@ const Meteorologie = (props) => {
                     <InputGroupAddon addonType="prepend"><Button onClick={findMeteo}> Trouver </Button></InputGroupAddon>
                 </InputGroup>*/}
 
-                <div style={{ textAlign: 'center' }}>
+                <div style={{ textAlign: 'center' }} key={"first"}>
                     <figcaption>
                         <img src={meteos[0].photo} width="150px" height="150px" alt="image" />
                     </figcaption>
