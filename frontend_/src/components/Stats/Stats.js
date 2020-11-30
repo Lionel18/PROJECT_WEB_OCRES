@@ -26,7 +26,9 @@ const Statistiques = (props) => {
 
                 {stat &&
                     <>
-                        <div style={{ textAlign: "center" }}>                <Button onClick={refresh}> Actualiser </Button>
+                        <div style={{ textAlign: "center", fontSize: "25px", fontFamily: "Courier New" }}>
+
+                            <Button style={{ marginBottom: "25px" }} color="primary" onClick={refresh}> Actualiser </Button>
 
                             <section>
                                 <p>Nombre de cas : {stat.nombreCas}</p>
@@ -39,22 +41,27 @@ const Statistiques = (props) => {
                         <Container>
                             <Row>
                                 <Col>
-                                    <img src="https://assets.stickpng.com/images/5eaedd9743c27a0004fbf6ae.png" width="70px" height="70px" />
-                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Le port du masque est très important</span>
-                                </Col>
-                                <Col>
-                                    <img src="https://assets.stickpng.com/images/5eaedd9743c27a0004fbf6ae.png" width="70px" height="70px" />
-                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Le port du masque est très important</span>
+                                    <h3 style={{ marginBottom: "20px", fontFamily: "Times New Roman" }}>Mesures de précautions à adopter :</h3>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <img src="https://assets.stickpng.com/images/5eaedd9743c27a0004fbf6ae.png" width="70px" height="70px" />
-                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Le port du masque est très important</span>
+                                    <img src="https://www.avenir-communication.com/wp-content/uploads/2020/05/masque-protection-3-plis.png" width="90px" height="70px" />
+                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Le port du masque est obligatoire</span>
                                 </Col>
                                 <Col>
-                                    <img src="https://assets.stickpng.com/images/5eaedd9743c27a0004fbf6ae.png" width="70px" height="70px" />
-                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Le port du masque est très important</span>
+                                    <img src="https://i.pinimg.com/originals/19/8a/1c/198a1c1268d54c8ae19ecc05aa5a56db.png" width="70px" height="90px" />
+                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Se laver les mains régulièrement</span>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <img src="https://cdn4.iconfinder.com/data/icons/prevent-spread-coronavirus/2000/1-16-01-512.png" width="90px" height="80px" />
+                                    <span style={{ fontSize: "20px", fontWeight: "bold", marginLeft: "10px" }}>Garder 1 mètre de distance</span>
+                                </Col>
+                                <Col>
+                                    <img src="https://www.tunisienumerique.com/wp-content/uploads/2020/03/Coronavirus-Instagram-annonce-6-nouveaut%C3%A9s-2.png" width="150px" height="70px" />
+                                    <span style={{ fontSize: "19px", fontWeight: "bold", marginLeft: "10px" }}>Sauver des vies en restant chez vous</span>
                                 </Col>
                             </Row>
                         </Container>

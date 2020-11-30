@@ -47,27 +47,28 @@ const Banque = () => {
 					</InputGroupAddon>
 				</InputGroup>
 
-				<InputGroup>
+				<InputGroup style={{ marginTop: "20px" }}>
 					<Input type="number" placeholder="Retirer €" onChange={e => setRetirer(+e.target.value)} />
 					<InputGroupAddon addonType="append">
 						<Button color="danger" onClick={calculateRetirer}> Retirer </Button>
 					</InputGroupAddon>
 				</InputGroup>
 
-
-				<div className="TotalArgent">
+				<hr></hr>
+				<div className="TotalArgent" style={{ textAlign: 'center', marginTop: "30px" }}>
 					<h1>Le solde de votre compte est de : {solde} €</h1>
 				</div>
 
-				<LineChart width={600} height={300} data={historiqueSolde} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+				<LineChart width={600} height={300} data={historiqueSolde} style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} >
 					<Line type="monotone" dataKey="uv" stroke="#8884d8" />
 					<CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
 					<XAxis dataKey="name" />
 					<YAxis />
 				</LineChart>
+
 			</Jumbotron>
 
-		</div>
+		</div >
 
 	);
 

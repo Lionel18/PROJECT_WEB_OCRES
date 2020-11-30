@@ -1,26 +1,55 @@
 import './App.css';
-import Filmographie from './components/Filmographie/Filmographie'
-import Banque from './components/Banque/Banque'
-import Meteo from './components/Meteo/Meteo'
-import News from './components/News/News'
-import Stats from './components/Stats/Stats'
-import Rappel from './components/Rappel/Rappel';
 
 
-import { Container, Row, Col } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Dashboard from './pages/dashboard';
+import Admin from './pages/admin';
+
+import { Container, Row, Col, Button } from 'reactstrap';
 
 
 function App() {
   return (
-    <div>
-      <Rappel />
+    <Router>
 
-      <Filmographie />
-      <Banque />
-      <Meteo />
-      <News />
-      <Stats />
-    </div>
+      <Row style={{ width: "100%" }}>
+        <Col xs='1' >
+          <div style={{ height: "100vh", position: "fixed", textAlign: "center" }}>
+            <div style={{ marginTop: "180px" }}>
+              <Button onClick={() => window.location = '/'} style={{ width: "120px", margin: "10px" }}>Dashboard</Button>
+              <br></br>
+              <Button onClick={() => window.location = '/admin'} style={{ width: "120px", margin: "10px" }}>Admin</Button>
+            </div>
+          </div>
+
+        </Col>
+
+
+
+
+        {/* A <Switch> looks through its children <Route>s and
+          renders the first one that matches the current URL. */}
+        <Col xs="11">
+          <Switch>
+
+            <Route path="/admin">
+              <Admin />
+            </Route>
+            <Route path="/">
+              <Dashboard />
+            </Route>
+          </Switch>
+        </Col>
+      </Row>
+    </Router>
+
+
+
   );
 }
 

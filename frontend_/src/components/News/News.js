@@ -15,9 +15,9 @@ class News extends React.Component {
           background: "#D3D3D3"
         },
         {
-          nom: 'News FRANCE',
-          photo: 'https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc2MzAyNDY4NjM0NzgwODQ1/joe-biden-gettyimages-1267438366.jpg',
-          actualite: "Macron s'engage pour un truc",
+          nom: 'News France',
+          photo: 'https://resize-parismatch.lanmedia.fr/img/var/news/storage/images/paris-match/people-a-z/emmanuel-macron/14862769-13-fre-FR/Emmanuel-Macron.jpg',
+          actualite: "Macron s'engage pour la France",
           background: "#D3D3D3"
         },
         {
@@ -50,11 +50,12 @@ class News extends React.Component {
 
           <div className="profil">
 
-            <ButtonGroup >
+            <ButtonGroup>
               {this.state.profils.map((profil, index) => (
-                <Button key={'button' + index} onClick={() => this.handleClick(index)}>{profil.nom}</Button>
+                <Button outline color="secondary" key={'button' + index} onClick={() => this.handleClick(index)}>{profil.nom}</Button>
               ))}
             </ButtonGroup>
+
           </div>
 
           <div className="carte1">

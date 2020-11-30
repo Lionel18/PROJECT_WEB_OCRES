@@ -52,15 +52,15 @@ const Rappel = (props) => {
 				<InputGroup>
 					<Input type="text" placeholder="Ajouter un rappel" onChange={e => setNewRappel(e.target.value)} value={newRappel} />
 					<InputGroupAddon addonType="append">
-						<Button color="primary" onClick={ajouterRappel}> Ajouter </Button>
+						<Button color="info" onClick={ajouterRappel}> Ajouter </Button>
 					</InputGroupAddon>
 				</InputGroup>
 
 				<hr></hr>
 				<Container>
 					<Row>
-						<Col>
-							<h2>Rappels</h2>
+						<Col sm="8">
+							<h2 style={{ marginTop: "15px", marginBottom: "30px" }}> <span style={{ border: "thick double red", padding: "5px" }}>Rappels</span> </h2>
 							{rappels.map((rappel, index) => (
 								<div key={'rappel' + index}>
 									<Input type="checkbox" onChange={e => handleCheck(e.target.checked, index)} /> <span style={{ fontSize: "20px" }}>{rappel.text}</span>
@@ -68,8 +68,8 @@ const Rappel = (props) => {
 
 							))}
 						</Col>
-						<Col>
-							<h2>Terminés</h2>
+						<Col sm="4">
+							<h2 style={{ marginTop: "15px", marginBottom: "30px" }}> <span style={{ border: "thick double green", padding: "5px" }}>Terminés</span> </h2>
 							{rappelsTermines.map((rappel, index) => (
 								<div key={'rappelTermines' + index}>
 									<span style={{ textDecoration: "line-through", fontSize: "20px", marginRight: "10px" }}>{rappel.text}</span>

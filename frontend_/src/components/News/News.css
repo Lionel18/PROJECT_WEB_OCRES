@@ -1,10 +1,10 @@
 
 .profil{
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1%;
-  margin-top: 1%;
-  margin-right: 1%;
+  justify-content: center;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  margin-right: 4%;
 }
 
 .nadal{
@@ -96,10 +96,11 @@
   margin-left: 20%;
 }
 
-.publication{
+.actualite{
   display: flex;
   justify-content: center;
-  font:17px Times New Roman;
+  font:25px Times New Roman;
+  margin-top: 20px;
 }
 
 .super{

@@ -15,7 +15,7 @@ const meteos = [{
     date: "29/11/2020",
     tempM: 5,
     tempAM: 11,
-    photo: 'https://fyooyzbm.filerobot.com/v7/https://static01.nicematin.com/media/npo/large/2014/11/6819ceccc4f2587143ed626c2bff46a1.png'
+    photo: 'https://images.squarespace-cdn.com/content/v1/5572b7b4e4b0a20071d407d4/1487091465187-9IXPUDR5TO1IBEF2CT2F/ke17ZwdGBToddI8pDm48kCMWMBFcqQftRz-JqZZoIB5Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFI99ncPZu898P4WAmVYNBp8mgB1qWbp5RirnU_Xvq-XCb8BodarTVrzIWCp72ioWw/07-Weather.png'
 
 }, {
 
@@ -23,31 +23,39 @@ const meteos = [{
     date: "30/11/2020",
     tempM: 9,
     tempAM: 14,
-    photo: 'https://fyooyzbm.filerobot.com/v7/https://static01.nicematin.com/media/npo/large/2014/11/6819ceccc4f2587143ed626c2bff46a1.png'
+    photo: 'https://images.squarespace-cdn.com/content/v1/5572b7b4e4b0a20071d407d4/1487091465187-9IXPUDR5TO1IBEF2CT2F/ke17ZwdGBToddI8pDm48kCMWMBFcqQftRz-JqZZoIB5Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFI99ncPZu898P4WAmVYNBp8mgB1qWbp5RirnU_Xvq-XCb8BodarTVrzIWCp72ioWw/07-Weather.png'
 
 }, {
 
     ville: "Paris",
-    date: "01/01/2020",
+    date: "01/12/2020",
     tempM: 9,
     tempAM: 14,
-    photo: 'https://fyooyzbm.filerobot.com/v7/https://static01.nicematin.com/media/npo/large/2014/11/6819ceccc4f2587143ed626c2bff46a1.png'
+    photo: 'https://images.squarespace-cdn.com/content/v1/5572b7b4e4b0a20071d407d4/1487091465187-9IXPUDR5TO1IBEF2CT2F/ke17ZwdGBToddI8pDm48kCMWMBFcqQftRz-JqZZoIB5Zw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFI99ncPZu898P4WAmVYNBp8mgB1qWbp5RirnU_Xvq-XCb8BodarTVrzIWCp72ioWw/07-Weather.png'
 
 }, {
 
     ville: "Paris",
-    date: "02/01/2020",
+    date: "02/12/2020",
     tempM: 9,
     tempAM: 14,
-    photo: 'https://fyooyzbm.filerobot.com/v7/https://static01.nicematin.com/media/npo/large/2014/11/6819ceccc4f2587143ed626c2bff46a1.png'
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Weather-sun-thorm-shower.svg/1200px-Weather-sun-thorm-shower.svg.png'
 
 }, {
 
     ville: "Paris",
-    date: "03/01/2020",
+    date: "03/12/2020",
     tempM: 9,
     tempAM: 14,
-    photo: 'https://fyooyzbm.filerobot.com/v7/https://static01.nicematin.com/media/npo/large/2014/11/6819ceccc4f2587143ed626c2bff46a1.png'
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Weather-sun-thorm-shower.svg/1200px-Weather-sun-thorm-shower.svg.png'
+
+}, {
+
+    ville: "Paris",
+    date: "04/12/2020",
+    tempM: 9,
+    tempAM: 11,
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Weather-sun-thorm-shower.svg/1200px-Weather-sun-thorm-shower.svg.png'
 
 }]
 
@@ -68,9 +76,9 @@ const Meteorologie = (props) => {
                     <InputGroupAddon addonType="prepend"><Button onClick={findMeteo}> Trouver </Button></InputGroupAddon>
                 </InputGroup>*/}
 
-                <div style={{ textAlign: 'center' }} key={"first"}>
+                <div style={{ textAlign: 'center', fontSize: "20px" }} key={"first"}>
                     <figcaption>
-                        <img src={meteos[0].photo} width="150px" height="150px" alt="image" />
+                        <img src={meteos[0].photo} width="170px" height="170px" alt="image" />
                     </figcaption>
                     <section>
                         <p>Date d'aujourd'hui : {meteos[0].date}</p>
@@ -78,6 +86,7 @@ const Meteorologie = (props) => {
                         <p>Température après-midi : {meteos[0].tempAM}</p>
                     </section>
                 </div>
+                <hr></hr>
 
 
                 <Container>
@@ -87,7 +96,7 @@ const Meteorologie = (props) => {
                             <Col sm="4">
                                 <div key={'meteo' + index}>
                                     <figcaption>
-                                        <img src={meteo.photo} width="30px" height="30px" alt="image" />
+                                        <img src={meteo.photo} width="60px" height="60px" alt="image" />
                                     </figcaption>
                                     <section>
                                         <p>{meteo.date}</p>

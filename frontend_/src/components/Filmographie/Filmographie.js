@@ -45,28 +45,29 @@ const Filmographie = (props) => {
     }
 
     return <div>
-        <Jumbotron>
+        <Jumbotron >
             <h1 className="display-5">Widget Filmographie</h1>
             <p className="lead">Cherchez des films avec ce widget</p>
             <InputGroup>
                 <Input type="text" placeholder="Rechercher un film" onChange={event => setSearchFilm(event.target.value)} />
-                <InputGroupAddon addonType="prepend"><Button onClick={findFilm}> Explorer </Button></InputGroupAddon>
+                <InputGroupAddon addonType="prepend"><Button color="warning" onClick={findFilm}> Explorer </Button></InputGroupAddon>
             </InputGroup>
-
-            {film &&
-                <>
-                    <figcaption>
-                        <img src={film.photo} width="150px" height="200px" alt="image" />
-                    </figcaption>
-                    <section>
-                        <p>Nom du film : {film.nom}</p>
-                        <p>Date de sortie : {film.date}</p>
-                        <p>Genre : {film.genre}</p>
-                        <p>Synopsis : {film.synopsis}</p>
-                        <p>Durée : {film.duree} min </p>
-                    </section>
-                </>
-            }
+            <div style={{ textAlign: 'center', marginTop: "30px", fontSize: "23px", fontFamily: "Serif" }}>
+                {film &&
+                    <>
+                        <figcaption>
+                            <img src={film.photo} width="170px" height="230px" alt="image" />
+                        </figcaption>
+                        <section style={{ marginTop: "30px" }}>
+                            <p>Nom du film : {film.nom}</p>
+                            <p>Date de sortie : {film.date}</p>
+                            <p>Genre : {film.genre}</p>
+                            <p>Synopsis : {film.synopsis}</p>
+                            <p>Durée : {film.duree} min </p>
+                        </section>
+                    </>
+                }
+            </div>
         </Jumbotron>
     </div>
 }
