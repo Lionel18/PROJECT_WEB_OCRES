@@ -16,7 +16,7 @@ Avant de commencer à coder, nous avons utilisé un outil d’organisation: Trel
 
 Nous avons aussi effectué en amont un mock-up et des wireframes à l’aide de Figma dont toutes les images sont disponibles dans le GitHub. 
 
-Manière de lancer le projet :
+# Manière de lancer le projet :
 
 Pour lancer le projet, il faut effectuer les commandes suivantes:
 
@@ -26,7 +26,7 @@ Pour lancer le projet, il faut effectuer les commandes suivantes:
 
 Le projet contient un fichier « components » qui contient tous nos widgets qui se trouve dans le fichier « src ».
 
-Documentation :
+# Documentation :
 
 -Rappel: Ajouter une activité depuis la barre de recherche. Cette dernière apparaitra dans la colonne « Rappel ». Puis une fois la checkbox coché, ce rappel se retrouvera sur la colonne « terminé » en étant barré. Enfin, il y aura un bouton « supprimer » qui permettra de supprimer ce rappel. 
 
@@ -40,10 +40,13 @@ Documentation :
 
 -News: Le widget News permet d’afficher l’actualité de différents thèmes pour le moment prédéfinis à savoir news US, news France et News sportives.
 
-Contributeurs :
+# Contributeurs :
 
 Lionel DELPHIN et Hubert PAGE.
 
+# P.S :
+
+On voulait aussi vous prévenir que nous avions eu beaucoup de mal à installer et utiliser Storybook et avec le manque de temps nous n'avions pas eu le temps malheureusement de nous pencher sur les erreurs et bugs liés à Storybook mais il sera fait pour le 14 Décembre !
 
 # Getting Started with Create React App
 
