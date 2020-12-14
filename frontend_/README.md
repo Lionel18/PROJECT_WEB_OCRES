@@ -1,3 +1,53 @@
+# Description du projet 
+
+Ce projet est un projet Dashboard composé de 6 widgets complété par une page administration. 
+
+La page admin contient un formulaire permettant d’injecter de la donnée dans une API, plus précisément dans le widget « Météo ».
+
+La page Dashboard comporte 6 différents widgets qui sont:
+	-	Rappel
+	-	Météo
+	-	Covid
+	-	Filmographie
+	-	Banque
+	-	News
+
+Avant de commencer à coder, nous avons utilisé un outil d’organisation: Trello. Pour s’attribuer les différentes tâches à effectuer dont voici le lien: https://trello.com/b/zD9ivosd/objectifs
+
+Nous avons aussi effectué en amont un mock-up et des wireframes à l’aide de Figma dont toutes les images sont disponibles dans le GitHub. 
+
+# Manière de lancer le projet :
+
+Pour lancer le projet, il faut effectuer les commandes suivantes:
+
+-cd PROJECT_WEB_OCRES
+-cd frontend
+-npm start
+
+Le projet contient un fichier « components » qui contient tous nos widgets qui se trouve dans le fichier « src ».
+
+# Documentation :
+
+-Rappel: Ajouter une activité depuis la barre de recherche. Cette dernière apparaitra dans la colonne « Rappel ». Puis une fois la checkbox coché, ce rappel se retrouvera sur la colonne « terminé » en étant barré. Enfin, il y aura un bouton « supprimer » qui permettra de supprimer ce rappel. 
+
+-Météo: Ce widget affiche la météo du jour et les prévisions des 6 prochains jours pour la ville de Paris.
+
+-Covid: Les chiffres sont fictifs pour le moment. Plus tard, il permettra d’actualiser en temps réel les statistiques du Covid-19 en France.
+
+-Filmograpahie: Vous pouvez rentrer dans la barre de recherche le film « Taxi 5 » ou « Bad Boys ».
+
+-Banque: Pour l’instant en partant d’un solde de 0, ce widget permet d’ajouter ou de retirer de l’argent (argent aussi fictif) et d’actualiser le solde de son compte. Ce solde est animé par un graphique réalisé grâce à la librairie recharts.
+
+-News: Le widget News permet d’afficher l’actualité de différents thèmes pour le moment prédéfinis à savoir news US, news France et News sportives.
+
+# Contributeurs :
+
+Lionel DELPHIN et Hubert PAGE.
+
+# P.S :
+
+On voulait aussi vous prévenir que nous avions eu beaucoup de mal à installer et utiliser Storybook et avec le manque de temps nous n'avions pas eu le temps malheureusement de nous pencher sur les erreurs et bugs liés à Storybook mais il sera fait pour le 14 Décembre !
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
