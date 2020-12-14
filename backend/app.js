@@ -6,6 +6,7 @@ const cors = require('cors')
 var indexRouter = require("./routes/index");
 var newsRouter = require('./routes/news')
 var rappelRouter = require('./routes/rappel')
+var banqueRouter = require('./routes/banque')
 
 
 
@@ -20,5 +21,5 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use('/news', newsRouter)
 app.use('/rappel', rappelRouter)
-
+app.use('/banque', banqueRouter)
 module.exports = app;

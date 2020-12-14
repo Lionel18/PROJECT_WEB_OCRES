@@ -1,8 +1,14 @@
 
 import './banque.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
+
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { Jumbotron, Button, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import moment from "moment";
+import 'moment/min/locales'
+moment.locale('fr')
+
 
 
 const Banque = () => {
@@ -13,23 +19,37 @@ const Banque = () => {
 	const [solde, setSolde] = useState(0);
 	const [historiqueSolde, setHistoriqueSolde] = useState([])
 
-	function calculateAjout() {
-		setSolde(ajout + solde);
-		let historique = [...historiqueSolde] // on créé une copie de la liste historique
-		let jour = historique.length + 1
-		historique.push({ name: 'Jour ' + jour, uv: (solde + ajout), pv: 2400, amt: 1200 })
+	const getBanque = () => {
+		axios.get('http://localhost:3100/banque').then(res => {
+			setHistoriqueSolde(res.data)
+			if (res.data.length > 0) {
+				setSolde(res.data[res.data.length - 1].uv)
+			} else {
+				setSolde(0)
+			}
+		})
+	}
 
-		setHistoriqueSolde(historique)
+	useEffect(() => {
+		getBanque()
+	}, [])
+	function calculateAjout() {
+		let h = { uv: (solde + ajout) }
+
+		axios.post('http://localhost:3100/banque', h).then(res => {
+			getBanque()
+		})
 	}
 
 	function calculateRetirer() {
-		setSolde(solde - retirer);
-		let historique = [...historiqueSolde] // on créé une copie de la liste historique
-		let jour = historique.length + 1
-		historique.push({ name: 'Jour ' + jour, uv: (solde - retirer), pv: 2400, amt: 1200 })
 
-		setHistoriqueSolde(historique)
+		let h = { uv: (solde - retirer) }
+
+		axios.post('http://localhost:3100/banque', h).then(res => {
+			getBanque()
+		})
 	}
+
 
 
 
@@ -63,7 +83,7 @@ const Banque = () => {
 				<LineChart width={600} height={300} data={historiqueSolde} style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} >
 					<Line type="monotone" dataKey="uv" stroke="#8884d8" />
 					<CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-					<XAxis dataKey="name" />
+					<XAxis dataKey="name" tickFormatter={(date) => moment(date).format('L HH:mm')} />
 					<YAxis />
 				</LineChart>
 

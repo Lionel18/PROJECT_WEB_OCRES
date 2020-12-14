@@ -2,40 +2,41 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './filmographie.css'
 import { Jumbotron, Button, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import axios from 'axios';
 
 const films = [{
 
-    nom: "Bad boys",
-    date: "22/11/2018",
-    duree: 120,
-    genre: "Action",
-    synopsis: "Très bon film",
-    photo: 'https://fr.web.img6.acsta.net/pictures/19/11/22/09/44/3027567.jpg'
-
-}, {
-    nom: "Taxi 5",
-    date: "25/11/2017",
-    duree: 110,
-    genre: "Action",
-    synopsis: "Très bon film et drôle",
-    photo: 'https://fr.web.img3.acsta.net/pictures/18/03/09/12/16/2548759.jpg'
-
-}, {
-
-    nom: "Soorarai Pottru",
-    date: "12/11/2020",
-    duree: 190,
-    genre: "Drame/Action",
-    synopsis: "Magnifique film avec un très bon Surya en forme",
-    photo: 'https://www.pinkvilla.com/files/styles/contentpreview/public/soorarai_pottru_suriyas_fans_request_actor_to_reconsider_the_decision_of_films_direct_release_on_an_ott_platform.jpg?itok=isALj45O'
+    Title: "Bad boys",
+    Released: "22/11/2018",
+    Runtime: "120 min",
+    Genre: "Action",
+    Plot: "Très bon film",
+    Poster: 'https://fr.web.img6.acsta.net/pictures/19/11/22/09/44/3027567.jpg'
 
 }]
 
 const Filmographie = (props) => {
 
-    const [film, setFilm] = useState(films[0])
+    const [film, setFilm] = useState(null)
 
-    const [searchFilm, setSearchFilm] = useState("")
+    const [searchFilm, setSearchFilm] = useState("Titanic")
+
+    const getFilm = () => {
+        const api_key = "7c16a712";
+        const api_url = "http://www.omdbapi.com/";
+        axios.get(api_url + '?apikey=' + api_key + '&t=' + searchFilm).then(res => {
+            console.log(res.data)
+            if (res.data.Response == "False") {
+                alert("Film introuvable")
+            } else {
+                setFilm(res.data)
+            }
+        })
+    }
+
+    useEffect(() => {
+        getFilm()
+    }, [])
 
     const findFilm = () => {
         // fonction qui va aller chercher le film avec le nom
@@ -51,20 +52,20 @@ const Filmographie = (props) => {
             </div>
             <InputGroup>
                 <Input type="text" placeholder="Rechercher un film" onChange={event => setSearchFilm(event.target.value)} />
-                <InputGroupAddon addonType="prepend"><Button color="warning" onClick={findFilm}> Explorer </Button></InputGroupAddon>
+                <InputGroupAddon addonType="prepend"><Button color="warning" onClick={getFilm}> Explorer </Button></InputGroupAddon>
             </InputGroup>
             <div style={{ textAlign: 'center', marginTop: "30px", fontSize: "23px", fontFamily: "Serif" }}>
                 {film &&
                     <>
                         <figcaption>
-                            <img src={film.photo} width="170px" height="230px" alt="image" />
+                            <img src={film.Poster} width="170px" height="230px" alt="image" />
                         </figcaption>
                         <section style={{ marginTop: "30px" }}>
-                            <p>Nom du film : {film.nom}</p>
-                            <p>Date de sortie : {film.date}</p>
-                            <p>Genre : {film.genre}</p>
-                            <p>Synopsis : {film.synopsis}</p>
-                            <p>Durée : {film.duree} min </p>
+                            <p>Nom du film : {film.Title}</p>
+                            <p>Date de sortie : {film.Released}</p>
+                            <p>Genre : {film.Genre}</p>
+                            <p>Synopsis : {film.Plot}</p>
+                            <p>Durée : {film.Runtime} </p>
                         </section>
                     </>
                 }
