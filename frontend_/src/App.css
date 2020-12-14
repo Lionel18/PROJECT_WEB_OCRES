@@ -6,6 +6,18 @@
   background-color: rgba(255, 255, 255,  0.2)  !important;
 }
 
+.meteo{
+  background-image: url(assets/chaud.jpg);
+  transition: .4s ease;
+  border-radius: 5px;
+}
+
+.meteo.cold{
+  background-image: url(assets/froid.jpg);
+  transition: .4s ease;
+  border-radius: 5px;
+}
+
 body{ 
   background: url(assets/background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;

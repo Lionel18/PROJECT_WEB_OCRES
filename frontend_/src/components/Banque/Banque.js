@@ -80,8 +80,8 @@ const Banque = () => {
 					<h1>Le solde de votre compte est de : {solde} €</h1>
 				</div>
 
-				<LineChart width={600} height={300} data={historiqueSolde} style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} >
-					<Line type="monotone" dataKey="uv" stroke="#8884d8" />
+				<LineChart width={360} height={300} data={historiqueSolde} style={{ marginLeft: "auto", marginRight: "auto", marginTop: "20px" }} >
+					<Line type="monotone" dataKey="uv" stroke="red" />
 					<CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
 					<XAxis dataKey="name" tickFormatter={(date) => moment(date).format('L HH:mm')} />
 					<YAxis />
