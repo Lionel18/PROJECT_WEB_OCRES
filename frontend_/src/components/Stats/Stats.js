@@ -1,22 +1,35 @@
 import React, { useState, useEffect } from 'react'
 import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
-
+import axios from 'axios'
 
 const Statistiques = (props) => {
 
     const [stat, setStat] = useState({
-        nombreCas: 7673,
-        nombreDeces: 763,
-        nombreGueris: 876
+        nombreCas: 0,
+        nombreDeces: 0,
+        nombreGueris: 0
     })
 
     const refresh = () => {
-        setStat({
-            nombreCas: 9009,
-            nombreDeces: 887,
-            nombreGueris: 1102
+        getStats()
+    }
+
+
+    const getStats = () => {
+        axios.get('https://coronavirusapi-france.now.sh/FranceLiveGlobalData').then(res => {
+            setStat({
+                nombreCas: res.data.FranceGlobalLiveData[0].casConfirmes,
+                nombreDeces: res.data.FranceGlobalLiveData[0].deces,
+                nombreGueris: res.data.FranceGlobalLiveData[0].gueris
+            })
         })
     }
+
+
+    useEffect(() => {
+        // quand le composant a fini de charger, on appelle l'api covid france
+        getStats()
+    }, [])
 
     return (
         <div>

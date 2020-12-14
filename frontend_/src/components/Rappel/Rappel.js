@@ -1,7 +1,7 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Jumbotron, Button, Input, InputGroup, InputGroupAddon, Container, Row, Col } from 'reactstrap';
-
+import axios from 'axios'
 
 const Rappel = (props) => {
 
@@ -11,35 +11,36 @@ const Rappel = (props) => {
 	const [rappels, setRappels] = useState([])
 	const [rappelsTermines, setRappelsTermines] = useState([])
 
+
+	const getRappels = () => {
+		axios.get('http://localhost:3100/rappel').then(res => {
+			setRappels(res.data.filter(rappel => rappel.finished == false))
+			setRappelsTermines(res.data.filter(rappel => rappel.finished == true))
+		})
+	}
+	useEffect(() => {
+		getRappels()
+	}, [])
 	const ajouterRappel = () => {
 		// fonction pour ajouter un rappel à la liste des rappels
-
-		let newRappels = [...rappels] // on créé une copie de la liste des rappels
-		newRappels.push({
-			text: newRappel
+		axios.post('http://localhost:3100/rappel', { text: newRappel }).then(res => {
+			getRappels()
 		})
 
-		setRappels(newRappels)
-		setNewRappel("")
 	}
 
-	const supprimerRappel = (index) => {
-		let newRappelsTermines = [...rappelsTermines]
-		newRappelsTermines.splice(index, 1)
-		setRappelsTermines(newRappelsTermines)
+	const supprimerRappel = (id) => {
+		axios.delete('http://localhost:3100/rappel/' + id).then(res => {
+			getRappels()
+		})
 	}
 
 
-	const handleCheck = (checked, index) => {
-		let newRappels = [...rappels] // on créé une copie de la liste des rappels
-		let newRappelsTermines = [...rappelsTermines]
+	const handleCheck = (checked, index, id) => {
+		axios.put('http://localhost:3100/rappel/' + id, { finished: true }).then(res => {
+			getRappels()
+		})
 
-
-		newRappelsTermines.push(newRappels[index]);
-		newRappels.splice(index, 1)
-
-		setRappels(newRappels)
-		setRappelsTermines(newRappelsTermines)
 	}
 
 	return (
@@ -64,7 +65,7 @@ const Rappel = (props) => {
 							<h2 style={{ marginTop: "15px", marginBottom: "30px" }}> <span style={{ border: "thick double red", padding: "5px" }}>Rappels</span> </h2>
 							{rappels.map((rappel, index) => (
 								<div key={'rappel' + index}>
-									<Input type="checkbox" onChange={e => handleCheck(e.target.checked, index)} /> <span style={{ fontSize: "20px" }}>{rappel.text}</span>
+									<Input type="checkbox" onChange={e => handleCheck(e.target.checked, index, rappel._id)} /> <span style={{ fontSize: "20px" }}>{rappel.text}</span>
 								</div>
 
 							))}
@@ -74,7 +75,7 @@ const Rappel = (props) => {
 							{rappelsTermines.map((rappel, index) => (
 								<div key={'rappelTermines' + index}>
 									<span style={{ textDecoration: "line-through", fontSize: "20px", marginRight: "10px" }}>{rappel.text}</span>
-									<Button color="danger" onClick={() => supprimerRappel(index)}>Supprimer</Button>
+									<Button color="danger" onClick={() => supprimerRappel(rappel._id)}>Supprimer</Button>
 								</div>
 							))}
 						</Col>

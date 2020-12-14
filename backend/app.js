@@ -5,6 +5,9 @@ var logger = require("morgan");
 const cors = require('cors')
 var indexRouter = require("./routes/index");
 var newsRouter = require('./routes/news')
+var rappelRouter = require('./routes/rappel')
+
+
 
 var app = express();
 app.use(cors());
@@ -16,5 +19,6 @@ app.use(cookieParser());
 
 app.use("/", indexRouter);
 app.use('/news', newsRouter)
+app.use('/rappel', rappelRouter)
 
 module.exports = app;
