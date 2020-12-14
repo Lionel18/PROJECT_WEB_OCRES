@@ -69,8 +69,10 @@ const Meteorologie = (props) => {
     return (
         <div>
             <Jumbotron>
-                <h1 className="display-4">Widget Météorologie</h1>
-                <p className="lead">Météo Paris</p>
+                <div style={{ textAlign: "center" }}>
+                    <h1 className="display-4">Widget Météorologie</h1>
+                    <p className="lead">Météo Paris</p>
+                </div>
                 {/*<InputGroup>
                     <Input type="text" placeholder="Rechercher une ville" onChange={event => setSearchMeteo(event.target.value)} />
                     <InputGroupAddon addonType="prepend"><Button onClick={findMeteo}> Trouver </Button></InputGroupAddon>

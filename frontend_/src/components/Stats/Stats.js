@@ -21,8 +21,10 @@ const Statistiques = (props) => {
     return (
         <div>
             <Jumbotron>
-                <h1 className="display-4">Widget Statistiques du COVID-19</h1>
-                <p className="lead">S'informer en temps réel sur les statistiques du Covid-19 en France</p>
+                <div style={{ textAlign: "center" }}>
+                    <h1 className="display-4">Widget Statistiques du COVID-19</h1>
+                    <p className="lead">S'informer en temps réel sur les statistiques du Covid-19 en France</p>
+                </div>
 
                 {stat &&
                     <>

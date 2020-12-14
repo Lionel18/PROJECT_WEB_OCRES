@@ -37,9 +37,10 @@ const Banque = () => {
 
 		<div>
 			<Jumbotron>
-				<h1 className="display-5">Widget Banque</h1>
-				<p className="lead">Bonjour et bienvenue sur votre espace client pour gérer votre solde bancaire.</p>
-
+				<div style={{ textAlign: "center" }}>
+					<h1 className="display-4">Widget Banque</h1>
+					<p className="lead">Bonjour et bienvenue sur votre espace client pour gérer votre solde bancaire.</p>
+				</div>
 				<InputGroup>
 					<Input type="number" placeholder="Ajouter €" onChange={e => setAjout(+e.target.value)} />
 					<InputGroupAddon addonType="append">

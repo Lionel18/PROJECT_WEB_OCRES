@@ -22,33 +22,33 @@ export default function Admin() {
     <div className="main">
       <form onSubmit={handleSubmit}>
 
-        <div className="admin">
+        <div className="admin" style={{ color: "white", textAlign: 'center', fontSize: "90px", fontFamily: "Courier" }}>
           <h1>Page admin</h1>
         </div>
 
         <div className="InfoTempAM">
           <label>
-            Température matin:
+            Température matin :
         <input
               name="TempM"
               type="number"
               value={TempAM}
               placeholder="°C"
               onChange={e => setTempAM(e.target.value)}
-              required />
+              required style={{ marginLeft: "10px" }} />
           </label>
         </div>
 
         <div className="InfoTempPM">
           <label>
-            Température après-midi:
+            Température après-midi :
         <input
               name="TempPM"
               type="number"
               placeholder="°C"
               value={TempPM}
               onChange={e => setTempPM(e.target.value)}
-              required />
+              required style={{ marginLeft: "10px" }} />
           </label>
         </div>
 
@@ -59,8 +59,8 @@ export default function Admin() {
               name="acceptedTerms"
               type="checkbox"
               onChange={e => setAcceptedTerms(e.target.value)}
-              required />
-        En cliquant ce bouton, j'accepte les conditions d'utilisations de ces 6 widgets.
+              required style={{ marginRight: "10px" }} />
+        En cliquant sur ce bouton, j'accepte les conditions d'utilisations de ces 6 widgets.
       </label>
         </div>
 

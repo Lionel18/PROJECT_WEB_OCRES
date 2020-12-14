@@ -1,6 +1,4 @@
 import './App.css';
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -20,10 +18,10 @@ function App() {
       <Row style={{ width: "100%" }}>
         <Col xs='1' >
           <div style={{ height: "100vh", position: "fixed", textAlign: "center" }}>
-            <div style={{ marginTop: "180px" }}>
-              <Button onClick={() => window.location = '/'} style={{ width: "120px", margin: "10px" }}>Dashboard</Button>
+            <div style={{ marginTop: "150px" }}>
+              <Button onClick={() => window.location = '/'} style={{ width: "120px", marginLeft: "30px", marginBottom: "20px" }}>Dashboard</Button>
               <br></br>
-              <Button onClick={() => window.location = '/admin'} style={{ width: "120px", margin: "10px" }}>Admin</Button>
+              <Button onClick={() => window.location = '/admin'} style={{ width: "120px", marginLeft: "30px" }}>Admin</Button>
             </div>
           </div>
 
@@ -46,6 +44,7 @@ function App() {
           </Switch>
         </Col>
       </Row>
+
     </Router>
 
 

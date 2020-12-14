@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Filmographie from '../components/Filmographie/Filmographie'
 import Banque from '../components/Banque/Banque'
 import Meteo from '../components/Meteo/Meteo'
@@ -19,17 +20,11 @@ const Dashboard = (props) => {
     return (
         <div>
 
-            <h1 style={{ textAlign: 'center', fontSize: "60px", fontFamily: "Courier" }}>DASHBORD</h1>
+            <h1 style={{ color: "white", textAlign: 'center', fontSize: "90px", fontFamily: "Courier" }}>DASHBORD</h1>
             <Container>
                 <Row>
                     <Col>
-                        <Rappel />
-                    </Col>
-                    <Col>
-                        <Filmographie />
-                    </Col>
-                    <Col>
-                        <Banque />
+                        <Stats />
                     </Col>
                 </Row>
             </Container>
@@ -37,7 +32,7 @@ const Dashboard = (props) => {
             <Container>
                 <Row>
                     <Col>
-                        <Meteo />
+                        <Filmographie />
                     </Col>
                     <Col>
                         <News />
@@ -48,7 +43,18 @@ const Dashboard = (props) => {
             <Container>
                 <Row>
                     <Col>
-                        <Stats />
+                        <Meteo />
+                    </Col>
+                    <Col>
+                        <Banque />
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container>
+                <Row>
+                    <Col>
+                        <Rappel />
                     </Col>
                 </Row>
             </Container>

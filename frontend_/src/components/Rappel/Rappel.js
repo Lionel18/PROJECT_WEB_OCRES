@@ -45,9 +45,10 @@ const Rappel = (props) => {
 	return (
 		<div>
 			<Jumbotron>
-				<h1 className="display-4">Widget Rappel</h1>
-				<p className="lead">Créer des rappels</p>
-
+				<div style={{ textAlign: "center" }}>
+					<h1 className="display-4">Widget Rappel</h1>
+					<p className="lead">Créer des rappels</p>
+				</div>
 
 				<InputGroup>
 					<Input type="text" placeholder="Ajouter un rappel" onChange={e => setNewRappel(e.target.value)} value={newRappel} />
@@ -59,7 +60,7 @@ const Rappel = (props) => {
 				<hr></hr>
 				<Container>
 					<Row>
-						<Col sm="8">
+						<Col sm="6">
 							<h2 style={{ marginTop: "15px", marginBottom: "30px" }}> <span style={{ border: "thick double red", padding: "5px" }}>Rappels</span> </h2>
 							{rappels.map((rappel, index) => (
 								<div key={'rappel' + index}>
@@ -68,14 +69,13 @@ const Rappel = (props) => {
 
 							))}
 						</Col>
-						<Col sm="4">
+						<Col sm="6">
 							<h2 style={{ marginTop: "15px", marginBottom: "30px" }}> <span style={{ border: "thick double green", padding: "5px" }}>Terminés</span> </h2>
 							{rappelsTermines.map((rappel, index) => (
 								<div key={'rappelTermines' + index}>
 									<span style={{ textDecoration: "line-through", fontSize: "20px", marginRight: "10px" }}>{rappel.text}</span>
 									<Button color="danger" onClick={() => supprimerRappel(index)}>Supprimer</Button>
 								</div>
-
 							))}
 						</Col>
 					</Row>

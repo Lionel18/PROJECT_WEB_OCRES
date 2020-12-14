@@ -41,13 +41,14 @@ const Filmographie = (props) => {
         // fonction qui va aller chercher le film avec le nom
         let foundFilm = films.find(f => f.nom == searchFilm); // on cherche le film avec le nom qui est écrit dans le champ de text (input)
         setFilm(foundFilm) // on met à jour le state film pour afficher
-
     }
 
     return <div>
         <Jumbotron >
-            <h1 className="display-5">Widget Filmographie</h1>
-            <p className="lead">Cherchez des films avec ce widget</p>
+            <div style={{ textAlign: "center" }}>
+                <h1 className="display-4">Widget Filmographie</h1>
+                <p className="lead">Cherchez des films avec ce widget</p>
+            </div>
             <InputGroup>
                 <Input type="text" placeholder="Rechercher un film" onChange={event => setSearchFilm(event.target.value)} />
                 <InputGroupAddon addonType="prepend"><Button color="warning" onClick={findFilm}> Explorer </Button></InputGroupAddon>

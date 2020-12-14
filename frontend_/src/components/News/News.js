@@ -45,9 +45,10 @@ class News extends React.Component {
     return (
       <body>
         <Jumbotron>
-          <h1 className="display-3">Widget News</h1>
-          <p className="lead">Soyez informé sur divers domaines du monde !</p>
-
+          <div style={{ textAlign: "center" }}>
+            <h1 className="display-4">Widget News</h1>
+            <p className="lead">Soyez informé sur divers domaines du monde !</p>
+          </div>
           <div className="profil">
 
             <ButtonGroup>
