@@ -17,12 +17,12 @@ Les trois widgets utilisant les API externes sont :
     Le fond du widget possède une transition à partir d'une température supérieur à 16°.
     
   
-Lees trois widgets utilisant la bdd sont:
-  - News
+Les trois widgets utilisant la bdd sont:
+  - News :
     Ce widget permet de créer une news. Il est lié à la page admin qui permet d'injecter de la donnée dans le widget (créer un nouvel article à partir d'un titre, une photo et une description).
-  - Rappel
+  - Rappel :
     Ce widget permet d'ajouter, changer l'état, et de supprimer un rappel rentré. 
-  - Banque
+  - Banque :
     Banque affiche sur un chart, calcule et conserve le solde de ses dépenses dans la bdd. Chaque action est datée et marquée avec l'heure sur le graphe. Le lien est le suivant : https://momentjs.com/
     Le solde affiché est le solde qu'il y avait à la dernière manipulation. 
 
