@@ -58,63 +58,67 @@ const Meteorologie = (props) => {
 
             <main>
 
-                <div style={{ textAlign: "center" }}>
-                    <h1 className="display-4">Widget Météorologie</h1>
-                </div>
-                <div style={{ textAlign: "center" }} className="search-box">
-                    <input type="text" className="search-bar" placeholder="météo de ta ville" onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} />
-                </div>
+                
+                <Jumbotron>
+                    <div style={{ textAlign: "center" }}>
+                        <h1 className="display-4">Widget Météorologie</h1>
+                        <p className="lead">Trouver la météo de votre ville</p>
+                    </div>
+                    <InputGroup>
+                        <Input type="text" className="search-bar" placeholder="Météo de ta ville" onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} />
+                        <InputGroupAddon addonType="prepend"><Button color="warning" onClick={search}> Rechercher </Button></InputGroupAddon>
+                    </InputGroup>
 
+                    {(typeof weather.main != "undefined") ? (
+                        <div>
 
-                {(typeof weather.main != "undefined") ? (
-                    <div>
-
-                        <div style={{ textAlign: "center" }}>
-                            <div className="location">{weather.name}</div>
-                            <sup> {weather.sys.country} </sup>
-                        </div>
-                        {/*<InputGroup>
+                            <div style={{ textAlign: "center" }}>
+                                <div className="location" style={{ fontSize: "25px", marginTop: "15px" }}>{weather.name}</div>
+                                <sup> {weather.sys.country} </sup>
+                            </div>
+                            {/*<InputGroup>
                                 <Input type="text" placeholder="Rechercher une ville" onChange={event => setSearchMeteo(event.target.value)} />
                                 <InputGroupAddon addonType="prepend"><Button onClick={findMeteo}> Trouver </Button></InputGroupAddon>
                             </InputGroup>*/}
 
 
 
-                        <div style={{ textAlign: 'center', fontSize: "20px" }} >
-                            <figcaption>
+                            <div style={{ textAlign: 'center', fontSize: "20px" }} >
+                                <figcaption>
 
 
-                                <div className="icon">
-                                    <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
-                                </div>
-                                <h4>{weather.weather[0].description}</h4>
+                                    <div className="icon">
+                                        <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+                                    </div>
+                                    <h4>{weather.weather[0].description}</h4>
 
-                                <div style={{ textAlign: "center" }}> {dateBuilder(new Date())}</div>
+                                    <div style={{ textAlign: "center" }}> {dateBuilder(new Date())}</div>
 
-                            </figcaption>
+                                </figcaption>
 
-                            {/*<InputGroup>   
+                                {/*<InputGroup>   
                                     <InputGroupAddon addonType="prepend" onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} ><Button color="warning"> Actualiser </Button></InputGroupAddon>
                                 </InputGroup>*/}
 
 
 
-                            <section>
+                                <section>
 
-                                <hr></hr>
+                                    <hr></hr>
 
-                                <div className="temps"> {Math.round(weather.main.temp)}°C </div>
+                                    <div className="temps"> {Math.round(weather.main.temp)}°C </div>
 
-                            </section>
+                                </section>
+                            </div>
+
+
+
+
+
                         </div>
-                        <hr></hr>
 
-
-
-
-                    </div>
-
-                ) : ('')}
+                    ) : ('')}
+                </Jumbotron>
             </main>
         </div>
     );
