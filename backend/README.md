@@ -5,7 +5,7 @@ Le Dashboard est composé de 3 widgets utilisant une API externe et de 3 widgets
 Les trois widgets utilisant les API externes sont :
   - Stat: https://coronavirusapi-france.now.sh/FranceLiveGlobalData   
     L'API renvoie des informations sur le covid en France et sont actualisés tous les soirs chaque jour à minuit. Nous avons choisis de renvoyer le nombre de cas, le nombre de décès et le nombre de personnes guéries au total.
-    Il faudra appuyez sur le bouton "Actualiser" dans le widget pour récupérer les données du jour suivant.
+    Il faudra appuyez sur le bouton "Actualiser" dans le widget pour récupérer les données du jour suivant. Vous pouvez retrouver dans le dossier "widgetStatScreenActualiser" des screens de l'actualisation de l'API covid 
     
   - Filmographie: http://www.omdbapi.com/
     L'API possède une base de données de films régulièrement mise à jour qui permet de ressortir la jaquette du film ainsi que de nombreuses informations tels que
